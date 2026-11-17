@@ -6,7 +6,11 @@ Built at a Grok hackathon with [Grok](https://grok.x.ai) in Cursor:
 
 ![Building OpenSeat with Grok](docs/built-with-grok.png)
 
-## Demo
+## Live
+
+**https://openseat.vercel.app**
+
+## Demo (local)
 
 ```bash
 cd web

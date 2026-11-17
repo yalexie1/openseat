@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 import { Resend } from "resend";
+import nodemailer from "nodemailer";
+import type { Transporter } from "nodemailer";
 
 type Body = {
   to?: string;
@@ -9,17 +10,17 @@ type Body = {
   url?: string;
 };
 
+type MailerCache = {
+  transporter: Transporter;
+  from: string;
+};
+
 declare global {
   // eslint-disable-next-line no-var
-  var __openseatMailer:
-    | {
-        transporter: nodemailer.Transporter;
-        from: string;
-      }
-    | undefined;
+  var __openseatMailer: MailerCache | undefined;
 }
 
-async function etherealTransporter() {
+async function etherealTransporter(): Promise<MailerCache> {
   if (globalThis.__openseatMailer) return globalThis.__openseatMailer;
   const account = await nodemailer.createTestAccount();
   const transporter = nodemailer.createTransport({
@@ -103,7 +104,6 @@ export async function POST(req: NextRequest) {
     });
   }
 
-  // Hackathon fallback: Ethereal catch inbox + preview URL (proves the send)
   try {
     const { transporter, from } = await etherealTransporter();
     const info = await transporter.sendMail({
