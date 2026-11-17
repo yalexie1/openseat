@@ -6,11 +6,17 @@ OpenSeat never logs into Yale and never enrolls for you.
 
 **Live:** [https://openseat.vercel.app](https://openseat.vercel.app)
 
+## Demo
+
+![OpenSeat demo — search PHIL 1176, simulate open, get alert + email](docs/openseat-demo.gif)
+
+[Download MP4](docs/openseat-demo.mp4) · [WebM](docs/openseat-demo.webm)
+
 Built at a Grok hackathon with [Grok](https://grok.x.ai) in Cursor:
 
 ![Building OpenSeat with Grok](docs/built-with-grok.png)
 
-## Quick demo
+## Quick try
 
 1. Open [https://openseat.vercel.app](https://openseat.vercel.app).
 2. Enter your alert email (with Resend’s test sender, use the email on your Resend account).
@@ -44,6 +50,14 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
+
+Re-record the README demo against production:
+
+```bash
+npm install -D playwright
+npx playwright install chromium
+node scripts/record-demo.mjs
+```
 
 ## Stack
 

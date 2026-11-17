@@ -1,0 +1,27 @@
+{
+  "name": "grokathon",
+  "version": "1.0.0",
+  "description": "Watch full Yale classes. Get a **browser ping + email** the second a seat opens — then you register yourself in Yale Course Search.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalexie1/openseat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yalexie1/openseat/issues"
+  },
+  "homepage": "https://github.com/yalexie1/openseat#readme",
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}
