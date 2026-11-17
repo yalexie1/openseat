@@ -1,6 +1,6 @@
 # OpenSeat
 
-Watch full Yale classes. Get a **browser ping + email** the second a seat opens — then you register yourself in Yale Course Search.
+Watch Yale class availability. Get a **browser ping + email** the second a seat opens — then you register yourself in Yale Course Search.
 
 OpenSeat never logs into Yale and never enrolls for you.
 
@@ -27,7 +27,7 @@ Built at a Grok hackathon with [Grok](https://grok.x.ai) in Cursor:
 
 ## Why it exists
 
-During add/drop, seats open and disappear in seconds. Students refresh Yale Course Search and still miss classes. OpenSeat keeps a personal watchlist and alerts you the moment status flips so you can claim the seat yourself.
+During add/drop, seats open and disappear in seconds, but return at later times as students drop courses they had no intention of taking in the first place. Students refresh Yale Course Search and still miss classes. OpenSeat keeps a personal watchlist and alerts you the moment status flips so you can claim the seat yourself.
 
 ## What it does
 
