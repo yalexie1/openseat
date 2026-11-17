@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  CATALOG_PATH,
   SEASON_LABEL,
   yaleSearchUrl,
   type CatalogCourse,
@@ -50,7 +51,7 @@ export default function OpenSeatApp() {
     } else {
       setNotif(Notification.permission);
     }
-    fetch("/catalog-202601.json")
+    fetch(CATALOG_PATH)
       .then((r) => r.json())
       .then((data: CatalogCourse[]) => setCatalog(data))
       .catch(() => setLiveHint("Catalog failed to load"));

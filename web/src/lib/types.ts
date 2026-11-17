@@ -24,9 +24,10 @@ export type WatchedCourse = {
   notifiedAt?: number;
 };
 
-export const SEASON = "202601";
-export const SEASON_LABEL = "Spring 2026";
+export const SEASON = "202701";
+export const SEASON_LABEL = "Spring 2027";
 export const STORAGE_KEY = "openseat-watchlist-v1";
+export const CATALOG_PATH = `/catalog-${SEASON}.json`;
 
 export function yaleSearchUrl(code: string): string {
   const q = encodeURIComponent(code);
