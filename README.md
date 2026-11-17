@@ -1,43 +1,60 @@
 # OpenSeat
 
-Browser + email alerts when a full Yale class opens a seat. You enroll yourself in Yale Course Search — OpenSeat never logs in or registers for you.
+Watch full Yale classes. Get a **browser ping + email** the second a seat opens — then you register yourself in Yale Course Search.
+
+OpenSeat never logs into Yale and never enrolls for you.
+
+**Live:** [https://openseat.vercel.app](https://openseat.vercel.app)
 
 Built at a Grok hackathon with [Grok](https://grok.x.ai) in Cursor:
 
 ![Building OpenSeat with Grok](docs/built-with-grok.png)
 
-## Live
+## Quick demo
 
-**https://openseat.vercel.app**
+1. Open [https://openseat.vercel.app](https://openseat.vercel.app).
+2. Enter your alert email (with Resend’s test sender, use the email on your Resend account).
+3. Click **Enable browser pings** and allow notifications.
+4. Search a Spring 2027 course, e.g. `PHIL 1176` (Death — Shelly Kagan).
+5. Add it to the watchlist, then click **Simulate open**.
+6. You’ll get an on-page alert, a browser notification, an email, and a link into Course Search.
 
-## Demo (local)
+## Why it exists
+
+During add/drop, seats open and disappear in seconds. Students refresh Yale Course Search and still miss classes. OpenSeat keeps a personal watchlist and alerts you the moment status flips so you can claim the seat yourself.
+
+## What it does
+
+| Feature | Detail |
+|---|---|
+| Real catalog | Spring 2027 Yale College courses from [CourseTable](https://coursetable.com)’s public data |
+| Watchlist | Saved in your browser (localStorage) |
+| Browser ping | Notification API + sound + tab title flash |
+| Email | Resend (`RESEND_API_KEY`) |
+| Register link | Deep link to [Yale Course Search](https://courses.yale.edu/) for that course |
+| Demo mode | **Simulate open** forces a full → open flip for pitches |
+
+## Run locally
 
 ```bash
 cd web
 npm install
+cp .env.local.example .env.local   # add RESEND_API_KEY
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-1. Enter an alert email and enable browser notifications.
-2. Search a real Spring 2027 Yale College course (e.g. `PHIL 1176`).
-3. Add it to the watchlist, then click **Simulate open**.
-4. You get a browser ping, an email, and a link straight into Course Search.
-
-For real Resend delivery, copy `web/.env.local.example` → `web/.env.local` and set `RESEND_API_KEY` (never commit that file).
-
-## What it does
-
-- Real Spring 2027 YC course names from CourseTable’s public catalog
-- Watchlist saved in your browser
-- Browser notification + optional email when a seat flips full → open
-- Deep link to Yale Course Search so you claim the seat yourself
-
 ## Stack
 
-Next.js · TypeScript · Tailwind · Resend (email) · CourseTable catalog data
+Next.js · TypeScript · Tailwind · Resend · CourseTable catalog · Vercel
 
-## Agent board
+## Notes
 
-This repo also includes the shared hackathon agent board (`tools/board`). See `AGENTS.md` for team workflow.
+- Catalog term: **Spring 2027** (`202701`), file `web/public/catalog-202701.json`.
+- Live Yale open/full probes are blocked by Course Search’s WAF from most servers; the product loop is watch → status change → alert, with **Simulate open** for demos.
+- Resend’s `onboarding@resend.dev` sender only delivers to your Resend account email until you verify your own domain.
+
+## Repo
+
+App code lives in [`web/`](web/). Hackathon agent board helpers are in `tools/board` — see [`AGENTS.md`](AGENTS.md).
