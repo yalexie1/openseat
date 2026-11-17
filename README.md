@@ -8,9 +8,9 @@ OpenSeat never logs into Yale and never enrolls for you.
 
 ## Demo
 
-![OpenSeat demo — search PHIL 1176, simulate open, get alert + email](docs/openseat-demo.gif)
+![OpenSeat demo](docs/openseat-demo-user.gif)
 
-[Download MP4](docs/openseat-demo.mp4) · [WebM](docs/openseat-demo.webm)
+[Download MP4](docs/openseat-demo-user.mp4)
 
 Built at a Grok hackathon with [Grok](https://grok.x.ai) in Cursor:
 
