@@ -399,7 +399,7 @@ export default function OpenSeatApp() {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search CPSC 2230, seminar title, professor…"
+          placeholder="Search by course number, seminar title, professor…"
           className="mt-2 w-full border border-line bg-panel px-4 py-3.5 text-lg text-text outline-none transition placeholder:text-muted/60 focus:border-brand focus:shadow-[0_0_0_3px_var(--glow)]"
           autoComplete="off"
           spellCheck={false}
