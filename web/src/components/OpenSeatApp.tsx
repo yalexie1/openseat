@@ -363,34 +363,34 @@ export default function OpenSeatApp() {
   {/* pingNote and emailLink stay the same */}
 </header>
       {alert && (
-        <div className="slide-alert mt-6 flex flex-col gap-3 border border-open bg-open/10 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="mono text-[11px] uppercase tracking-[0.2em] text-open">
-              Seat available
-            </p>
-            <p className="mt-1 text-xl font-bold">
-              {alert.code} — {alert.title}
-            </p>
-          </div>
-          <div className="flex gap-2">
-            <a
-              href={yaleSearchUrl(alert.code)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-sm bg-open px-4 py-2.5 text-sm font-bold text-ink"
-            >
-              Open in Course Search →
-            </a>
-            <button
-              type="button"
-              onClick={() => setAlert(null)}
-              className="rounded-sm border border-line px-3 py-2 text-sm text-muted"
-            >
-              Dismiss
-            </button>
-          </div>
-        </div>
-      )}
+  <div className="slide-alert mt-6 flex flex-col gap-4 rounded-xl border border-open/60 bg-open/10 px-5 py-5 shadow-lg shadow-open/10 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <p className="mono text-[11px] uppercase tracking-[0.2em] text-open">
+        Seat available
+      </p>
+      <p className="mt-1 text-xl font-bold">
+        {alert.code} — {alert.title}
+      </p>
+    </div>
+    <div className="flex gap-2">
+      <a
+        href={yaleSearchUrl(alert.code)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-lg bg-open px-5 py-2.5 text-sm font-bold text-ink shadow-sm transition hover:brightness-110"
+      >
+        Open in Course Search →
+      </a>
+      <button
+        type="button"
+        onClick={() => setAlert(null)}
+        className="rounded-lg border border-line/70 px-4 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-text"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+)}
 
       <section className="rise-in mt-8" style={{ animationDelay: "60ms" }}>
         <label className="mono text-[11px] uppercase tracking-[0.18em] text-muted">
